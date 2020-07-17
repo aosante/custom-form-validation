@@ -1,37 +1,8 @@
 import React from 'react';
 import useForm from '../lib/useForm';
+import { stateSchema, validationSchema } from './schemas';
 
 const Form = () => {
-  const stateSchema = {
-    first_name: { value: '', error: '' },
-    last_name: { value: '', error: '' },
-    email: { value: '', error: '' },
-  };
-
-  const validationSchema = {
-    first_name: {
-      required: true,
-      validator: {
-        regEx: /^[a-zA-Z]+$/,
-        error: 'Invalid first name format.',
-      },
-    },
-    last_name: {
-      required: true,
-      validator: {
-        regEx: /^[a-zA-Z]+$/,
-        error: 'Invalid last name format.',
-      },
-    },
-    email: {
-      required: true,
-      validator: {
-        regEx: /\S+@\S+\.\S+/,
-        error: 'Invalid email format.',
-      },
-    },
-  };
-
   const onSubmit = (state) => {
     alert(JSON.stringify(state, null, 2));
   };
